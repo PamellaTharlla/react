@@ -16,12 +16,10 @@ export default function App() {
   }, [permissao]);
 
   if (!permissao) {
-    
     return <View />;
   }
 
   if (!permissao.granted) {
-    
     return (
       <View style={styles.container}>
         <Text style={styles.text}>Precisamos da sua permissão para mostrar a câmera</Text>
@@ -74,6 +72,12 @@ export default function App() {
             <TouchableOpacity style={styles.button} onPress={tirarFoto}>
               <Ionicons name="camera" size={60} color="white" />
             </TouchableOpacity>
+          </View>
+         
+          <View style={styles.infoContainer}>
+            <Text style={styles.infoText}>
+              {tipo === CameraType.back ? 'Câmera Traseira' : 'Câmera Frontal'}
+            </Text>
           </View>
         </Camera>
       )}
@@ -139,5 +143,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 18,
     marginBottom: 10,
+  },
+  infoContainer: {
+    position: 'absolute',
+    bottom: 80, 
+    left: 20,
+    right: 20,
+    alignItems: 'center',
+  },
+  infoText: {
+    fontSize: 18,
+    color: 'white',
+    backgroundColor: 'rgba(0,0,0,0.5)', 
+    padding: 10,
+    borderRadius: 8,
   },
 });
