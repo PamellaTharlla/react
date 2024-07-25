@@ -16,12 +16,12 @@ export default function App() {
   }, [permissao]);
 
   if (!permissao) {
-    // As permissões da câmera ainda estão carregando
+    
     return <View />;
   }
 
   if (!permissao.granted) {
-    // As permissões da câmera não foram concedidas
+    
     return (
       <View style={styles.container}>
         <Text style={styles.text}>Precisamos da sua permissão para mostrar a câmera</Text>
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: 'black', // Adiciona um fundo preto para melhorar a visibilidade
+    backgroundColor: 'black', 
   },
   camera: {
     flex: 1,
@@ -121,13 +121,13 @@ const styles = StyleSheet.create({
   voltarButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#ff4081', // Cor de fundo do botão voltar
+    backgroundColor: '#ff4081', 
     padding: 10,
     borderRadius: 8,
     margin: 20,
   },
   permissionButton: {
-    backgroundColor: '#ff4081', // Cor de fundo do botão de permissão
+    backgroundColor: '#ff4081', 
     padding: 10,
     borderRadius: 8,
   },
