@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function Home({ navigation }) {
   return (
@@ -10,6 +11,7 @@ export default function Home({ navigation }) {
         style={styles.button}
         onPress={() => navigation.navigate('Camera')}
       >
+        <Icon name="photo-camera" size={24} color="#FFFFFF" style={styles.icon} />
         <Text style={styles.buttonText}>Abrir Camera</Text>
       </TouchableOpacity>
     </View>
@@ -28,11 +30,16 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   button: {
-    backgroundColor: '#8A2BE2', 
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#8A2BE2',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
     marginTop: 20,
+  },
+  icon: {
+    marginRight: 10,
   },
   buttonText: {
     color: '#FFFFFF',
